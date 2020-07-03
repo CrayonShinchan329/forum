@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/forum-common/forum-common.iml" filepath="$PROJECT_DIR$/forum-common/forum-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/forum-core/forum-core.iml" filepath="$PROJECT_DIR$/forum-core/forum-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/forum-dao/forum-dao.iml" filepath="$PROJECT_DIR$/forum-dao/forum-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/forum-model/forum-model.iml" filepath="$PROJECT_DIR$/forum-model/forum-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/forum-service/forum-service.iml" filepath="$PROJECT_DIR$/forum-service/forum-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/forum-web/forum-web.iml" filepath="$PROJECT_DIR$/forum-web/forum-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jeesns.iml" filepath="$PROJECT_DIR$/jeesns.iml" />
+    </modules>
+  </component>
+</project>

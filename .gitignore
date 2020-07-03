@@ -1,0 +1,7 @@
+# Project exclude paths
+/forum-common/target/
+/forum-core/target/
+/forum-dao/target/
+/forum-model/target/
+/forum-service/target/
+/forum-web/target/

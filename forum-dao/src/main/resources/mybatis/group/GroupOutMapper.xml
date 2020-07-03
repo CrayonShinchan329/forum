@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lxinet.jeesns.dao.group.IGroupOutDao">
+  <resultMap id="GroupOutResult" type="GroupOut">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <id column="groupId" jdbcType="INTEGER" property="groupId" />
+    <id column="memberId" jdbcType="INTEGER" property="memberId" />
+    <id column="status" jdbcType="INTEGER" property="status" />
+    <id column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+
+  <select id="findById" parameterType="java.lang.Integer" resultMap="GroupOutResult">
+    select * from tbl_group_out where id = #{id}
+  </select>
+  <select id="listByPage" resultMap="GroupOutResult">
+    select
+     a.*,
+     b.name as groupName,
+     c.name as memberName
+    from tbl_group_out a
+    left join tbl_group b on a.groupId = b.id
+    left join tbl_member c on a.memberId = c.id
+    <where>
+      <if test="groupId &gt; -1">
+        and a.groupId = #{groupId}
+      </if>
+      <if test="status &gt; -1">
+        and a.status=#{status}
+      </if>
+    </where>
+    order by a.createTime desc
+  </select>
+  <insert id="save" useGeneratedKeys="true" keyProperty="id">
+    insert into tbl_group_out(groupId,memberId,status,createTime)
+    values(#{groupId},#{memberId},#{status},now())
+  </insert>
+  <update id="changeStatus">
+    update tbl_group_out set status=(CASE WHEN status=0 THEN 1 ELSE 0 END) where id = #{id}
+  </update>
+  <delete id="delete" parameterType="java.lang.Integer">
+    delete from tbl_group_out where id = #{id}
+  </delete>
+</mapper>

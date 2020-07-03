@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="forum-web:war">
+    <output-path>$PROJECT_DIR$/forum-web/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>forum-web</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="forum-web.war">
+      <element id="artifact" artifact-name="forum-web:war exploded" />
+    </root>
+  </artifact>
+</component>
